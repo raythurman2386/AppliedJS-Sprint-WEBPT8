@@ -31,5 +31,28 @@ axios
 
 // Create a function to return article components
 function Articles(articleData){
+  const card = document.createElement('div');
+  card.classList.add('card')
 
+  // headline div
+  const headline = document.createElement('div');
+  headline.classList.add('headline');
+  headline.textContent.add = 'Change me please';// TODO Add the textcontent for this div
+  card.appendChild(headline);
+
+  // Author div that is appended to the card
+  const author = document.createElement('div');
+  author.classList.add('author');
+  card.appendChild(author);
+
+  // img container appended to the author
+  const imgContainer = document.createElement('div');
+  imgContainer.classList.add('img-container');
+  author.appendChild(imgContainer);
+
+  // Img src appended to img container
+  const imgSrc = document.createElement('img');
+  imgSrc.src = 'Fill this out still please' // TODO Add the img source from the article
+
+  // Span appended to the author container
 }
