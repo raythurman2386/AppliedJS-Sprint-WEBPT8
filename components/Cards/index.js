@@ -17,17 +17,22 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const cardsContainer = document.querySelector('.cards-container');
 
 axios
 		.get(`https://lambda-times-backend.herokuapp.com/articles`)
 		.then((res) => {
       // set the array to a var
       // main article variable
-      const articles = res.data.articles;
-      console.log(articles);
+      const data = res.data.articles;
+      console.log(data);
 
       // temp variables testing data
-      const javascript = res.data.articles.javascript;
+      const javascript = res.data.articles.javascript.forEach(element => {
+        let article = Articles(element);
+
+        cardsContainer.appendChild(article);
+      });
       const bootstrap = res.data.articles.bootstrap;
       const technology = res.data.articles.technology;
       const jquery = res.data.articles.jquery;
