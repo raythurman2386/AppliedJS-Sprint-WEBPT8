@@ -22,8 +22,22 @@ axios
 		.get(`https://lambda-times-backend.herokuapp.com/articles`)
 		.then((res) => {
       // set the array to a var
-      console.log(res.data.articles);      
-		})
+      console.log(res.data.articles);
+      // main article variable
+      const articles = res.data.articles;
+
+      // temp variables testing data
+      const javascript = res.data.articles.javascript;
+      const bootstrap = res.data.articles.bootstrap;
+      const technology = res.data.articles.technology;
+      const jquery = res.data.articles.jquery;
+      const node = res.data.articles.node;
+      console.log(javascript);  
+      console.log(bootstrap); 
+      console.log(technology); 
+      console.log(jquery); 
+      console.log(node);   
+    })
 		.catch((error) => {
       // console log any errors
 			console.log(error);
