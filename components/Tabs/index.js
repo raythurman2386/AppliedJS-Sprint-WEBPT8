@@ -13,12 +13,12 @@ axios
 		.get(`https://lambda-times-backend.herokuapp.com/topics`)
 		.then((res) => {
       // set the array to a var
-      console.log(res.data.topics);
+      // console.log(res.data.topics);
       const data = res.data.topics;
 
       // loop over items and make a tab component
       data.forEach(element => {
-        console.log(element)
+        // console.log(element)
         let tab = Tabs(element);
 
         // Attach to the dom
