@@ -17,6 +17,7 @@ function Header() {
   // Date span
   const dateSpan = document.createElement('span')
   dateSpan.classList.add('date');
+  dateSpan.textContent = 'MARCH 28, 2019';
   headerDiv.appendChild(dateSpan);
 
   // Title h1
@@ -26,8 +27,11 @@ function Header() {
 
   // Temp Span
   const tempSpan = document.createElement('span')
-  dateSpan.classList.add('temp');
+  tempSpan.classList.add('temp');
+  tempSpan.textContent = '98°';
   headerDiv.appendChild(tempSpan);
 
   return headerDiv;
 }
+
+const headerContainer = document.querySelector('.header-container').appendChild(Header())
