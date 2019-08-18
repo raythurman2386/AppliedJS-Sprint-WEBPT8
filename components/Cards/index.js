@@ -28,3 +28,8 @@ axios
       // console log any errors
 			console.log(error);
     });
+
+// Create a function to return article components
+function Articles(articleData){
+
+}
