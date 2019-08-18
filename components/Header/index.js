@@ -10,14 +10,24 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header() {
+  // main header container
   const headerDiv = document.createElement('div');
   headerDiv.classList.add('header');
 
+  // Date span
   const dateSpan = document.createElement('span')
   dateSpan.classList.add('date');
+  headerDiv.appendChild(dateSpan);
 
+  // Title h1
   const title = document.createElement('h1');
   title.textContent = 'Lambda Times';
+  headerDiv.appendChild(title);
 
-  
+  // Temp Span
+  const tempSpan = document.createElement('span')
+  dateSpan.classList.add('temp');
+  headerDiv.appendChild(tempSpan);
+
+  return headerDiv;
 }
