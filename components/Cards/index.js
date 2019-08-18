@@ -53,6 +53,12 @@ function Articles(articleData){
   // Img src appended to img container
   const imgSrc = document.createElement('img');
   imgSrc.src = 'Fill this out still please' // TODO Add the img source from the article
+  imgContainer.appendChild(imgSrc);
 
   // Span appended to the author container
+  const authorSpan = document.createElement('span');
+  authorSpan.textContent = 'Fill me in please' // TODO Add the text content for the author
+  author.appendChild(authorSpan);
+
+  return card;
 }
