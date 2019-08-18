@@ -19,10 +19,10 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 axios
-		.get(`https://lambda-times-backend.herokuapp.com/topics`)
+		.get(`https://lambda-times-backend.herokuapp.com/articles`)
 		.then((res) => {
       // set the array to a var
-      console.log(res.data);      
+      console.log(res.data.articles);      
 		})
 		.catch((error) => {
       // console log any errors
