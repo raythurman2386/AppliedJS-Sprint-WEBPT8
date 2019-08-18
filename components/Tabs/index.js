@@ -20,16 +20,18 @@ axios
       data.forEach(element => {
         console.log(element)
         let tab = Tabs(element);
-        topics.appendChild(tab);
+
         // Attach to the dom
+        topics.appendChild(tab);
       });
       
 		})
 		.catch((error) => {
+      // console log any errors
 			console.log(error);
     });
     
-
+// Create a function to return the individual tab components
 function Tabs(tabData) {
   const tab = document.createElement('div');
   tab.classList.add('tab');
