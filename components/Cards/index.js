@@ -22,9 +22,9 @@ axios
 		.get(`https://lambda-times-backend.herokuapp.com/articles`)
 		.then((res) => {
       // set the array to a var
-      console.log(res.data.articles);
       // main article variable
       const articles = res.data.articles;
+      console.log(articles);
 
       // temp variables testing data
       const javascript = res.data.articles.javascript;
