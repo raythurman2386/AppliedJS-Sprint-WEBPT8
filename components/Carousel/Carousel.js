@@ -26,6 +26,8 @@ const images = [
   "./assets/carousel/turntable.jpeg",
 ]
 
+let i = 0;
+
 const Carousel = () => {
   const carousel = document.createElement('div');
   carousel.classList.add('carousel');
@@ -37,13 +39,11 @@ const Carousel = () => {
   carousel.appendChild(leftButton);
 
   // Image
-  images.forEach(image => {
-    console.log(image)
-    let img = document.createElement('img');
-    img.src = image;
+  let img = document.createElement('img');
+  img.style.display = 'inline-block';
+  img.src = images[i];
 
-    carousel.appendChild(img);
-  })
+  carousel.appendChild(img);
 
   // Right button
   const rightButton = document.createElement('div');
@@ -53,6 +53,8 @@ const Carousel = () => {
 
   return carousel;
 }
+
+console.log(Carousel());
 
 carouselContainer.appendChild(Carousel(images));
 

@@ -25,7 +25,7 @@ axios
       // set the array to a var
       // main article variable
       const data = res.data.articles;
-      console.log(data);
+      // console.log(data);
 
       // temp variables testing data
       const javascript = res.data.articles.javascript.forEach(element => {
