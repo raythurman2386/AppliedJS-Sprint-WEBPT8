@@ -24,7 +24,7 @@ axios
 		.then((res) => {
       // set the array to a var
       // main article variable
-      const data = res.data.articles;
+      const data = Array.from(res.data.articles);
       console.log(data);
 
       // temp variables testing data
@@ -33,10 +33,26 @@ axios
 
         cardsContainer.appendChild(article);
       });
-      const bootstrap = res.data.articles.bootstrap;
-      const technology = res.data.articles.technology;
-      const jquery = res.data.articles.jquery;
-      const node = res.data.articles.node;
+      const bootstrap = res.data.articles.bootstrap.forEach(element => {
+        let article = Articles(element);
+
+        cardsContainer.appendChild(article);
+      });
+      const technology = res.data.articles.technology.forEach(element => {
+        let article = Articles(element);
+
+        cardsContainer.appendChild(article);
+      });
+      const jquery = res.data.articles.jquery.forEach(element => {
+        let article = Articles(element);
+
+        cardsContainer.appendChild(article);
+      });
+      const node = res.data.articles.node.forEach(element => {
+        let article = Articles(element);
+
+        cardsContainer.appendChild(article);
+      });
     })
 		.catch((error) => {
       // console log any errors
