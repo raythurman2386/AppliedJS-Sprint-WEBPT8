@@ -25,3 +25,25 @@ const images = [
   "./assets/carousel/turntable.jpeg",
 ]
 
+const Carousel = () => {
+  const carousel = document.createElement('div');
+  carousel.classList.add('carousel');
+
+  //left button
+  const leftButton = document.createElement('div');
+  leftButton.classList.add('left-button');
+  carousel.appendChild(leftButton);
+
+  // Image
+  images.forEach(image => {
+    let img = document.createElement('img');
+    img.src = image;
+  })
+
+  // Right button
+  const rightButton = document.createElement('div');
+  leftButton.classList.add('right-button');
+  carousel.appendChild(rightButton);
+
+  return carousel;
+}
