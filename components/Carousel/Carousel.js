@@ -26,7 +26,7 @@ const images = [
   "./assets/carousel/turntable.jpeg",
 ]
 
-const Carousel = () => {
+const Carousel = (images) => {
   const carousel = document.createElement('div');
   carousel.classList.add('carousel');
 
@@ -50,8 +50,8 @@ const Carousel = () => {
   return carousel;
 }
 
+carouselContainer.appendChild(Carousel(images));
+
 function moveLeft(){}
 
 function moveRight(){}
-
-carouselContainer.appendChild(Carousel())
