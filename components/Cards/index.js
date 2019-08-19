@@ -24,7 +24,7 @@ axios
 		.then((res) => {
       // set the array to a var
       // main article variable
-      const data = Array.from(res.data.articles);
+      const data = res.data.articles;
       console.log(data);
 
       // temp variables testing data
