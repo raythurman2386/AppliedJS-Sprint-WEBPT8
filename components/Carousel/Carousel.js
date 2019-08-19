@@ -19,13 +19,6 @@
 */
 const carouselContainer = document.querySelector('.carousel-container');
 
-const images = [
-  "./assets/carousel/mountains.jpeg",
-  "./assets/carousel/computer.jpeg",
-  "./assets/carousel/trees.jpeg",
-  "./assets/carousel/turntable.jpeg",
-]
-
 let i = 0;
 
 const Carousel = () => {
@@ -39,12 +32,26 @@ const Carousel = () => {
   leftButton.addEventListener('click', moveLeft);
   carousel.appendChild(leftButton);
 
-  // Image
-  let img = document.createElement('img');
-  img.style.display = 'inline-block';
-  img.src = images[i];
+  // Image 1
+  let img1 = document.createElement('img');
+  img1.src = "./assets/carousel/mountains.jpeg";
+  img1.style.display = 'inline-block';
+  carousel.appendChild(img1);
 
-  carousel.appendChild(img);
+  // Image 2
+  let img2 = document.createElement('img');
+  img2.src = "./assets/carousel/computer.jpeg";
+  carousel.appendChild(img2);
+
+  // Image 3
+  let img3 = document.createElement('img');
+  img3.src = "./assets/carousel/trees.jpeg";
+  carousel.appendChild(img3);
+
+  // Image 4
+  let img4 = document.createElement('img');
+  img4.src = "./assets/carousel/turntable.jpeg";
+  carousel.appendChild(img4);
 
   // Right button
   const rightButton = document.createElement('div');
@@ -56,7 +63,10 @@ const Carousel = () => {
   return carousel;
 }
 
-carouselContainer.appendChild(Carousel(images));
+carouselContainer.appendChild(Carousel());
+
+const images = document.querySelectorAll('.carousel img');
+console.log(images);
 
 function moveLeft(){
   console.log('clicked left')
