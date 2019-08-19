@@ -21,8 +21,6 @@ const carouselContainer = document.querySelector('.carousel-container');
 
 let imageSources = ['./assets/carousel/mountains.jpeg', './assets/carousel/computer.jpeg', './assets/carousel/trees.jpeg', './assets/carousel/turntable.jpeg'];
 
-let i = 0;
-
 const Carousel = () => {
   const carousel = document.createElement('div');
   carousel.classList.add('carousel');
@@ -37,30 +35,8 @@ const Carousel = () => {
   imageSources.forEach(image => {
     let img = document.createElement('img');
     img.src = image;
-    // img.style.display = 'inline-block';
     carousel.appendChild(img);
-  })
-
-  // // Image 1
-  // let img1 = document.createElement('img');
-  // img1.src = "./assets/carousel/mountains.jpeg";
-  // img1.style.display = 'inline-block';
-  // carousel.appendChild(img1);
-
-  // // Image 2
-  // let img2 = document.createElement('img');
-  // img2.src = "./assets/carousel/computer.jpeg";
-  // carousel.appendChild(img2);
-
-  // // Image 3
-  // let img3 = document.createElement('img');
-  // img3.src = "./assets/carousel/trees.jpeg";
-  // carousel.appendChild(img3);
-
-  // // Image 4
-  // let img4 = document.createElement('img');
-  // img4.src = "./assets/carousel/turntable.jpeg";
-  // carousel.appendChild(img4);
+  });
 
   // Right button
   const rightButton = document.createElement('div');
@@ -75,12 +51,37 @@ const Carousel = () => {
 carouselContainer.appendChild(Carousel());
 
 const images = document.querySelectorAll('.carousel img');
-console.log(images);
 
-function moveLeft(){
-  console.log('clicked left')
+let index = 0;
+
+function moveLeft(e){
+  console.log('clicked left', index);
+  e.preventDefault();
+
+  if(index === 0){
+    index = images.length;
+    showImage(index);
+  } else {
+    index--;
+    showImage(index);
+  }
 }
 
-function moveRight(){
-  console.log('moved right')
+function moveRight(e){
+  console.log('moved right');
+  e.preventDefault();
+
+  if(index === images.length){
+    index = 0;
+    showImage(index);
+  } else {
+    index++;
+    showImage(index);
+  }
 }
+
+function showImage(){
+  images[index].style.display = 'inline-block';
+}
+
+showImage();
