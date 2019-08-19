@@ -17,6 +17,7 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carouselContainer = document.querySelector('.carousel-container');
 
 const images = [
   "./assets/carousel/mountains.jpeg",
@@ -36,6 +37,7 @@ const Carousel = () => {
 
   // Image
   images.forEach(image => {
+    console.log(image)
     let img = document.createElement('img');
     img.src = image;
   })
@@ -47,3 +49,9 @@ const Carousel = () => {
 
   return carousel;
 }
+
+function moveLeft(){}
+
+function moveRight(){}
+
+carouselContainer.appendChild(Carousel())
