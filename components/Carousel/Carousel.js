@@ -36,6 +36,7 @@ const Carousel = () => {
   const leftButton = document.createElement('div');
   leftButton.classList.add('left-button');
   leftButton.textContent = '<';
+  leftButton.addEventListener('click', moveLeft());
   carousel.appendChild(leftButton);
 
   // Image
@@ -49,6 +50,7 @@ const Carousel = () => {
   const rightButton = document.createElement('div');
   rightButton.classList.add('right-button');
   rightButton.textContent = '>';
+  rightButton.addEventListener('click', moveRight());
   carousel.appendChild(rightButton);
 
   return carousel;
@@ -58,6 +60,10 @@ console.log(Carousel());
 
 carouselContainer.appendChild(Carousel(images));
 
-function moveLeft(){}
+function moveLeft(){
+  console.log('clicked left')
+}
 
-function moveRight(){}
+function moveRight(){
+  console.log('moved right')
+}
