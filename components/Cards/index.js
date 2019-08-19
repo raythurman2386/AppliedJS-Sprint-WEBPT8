@@ -53,10 +53,10 @@ function Articles(articleData){
   const card = document.createElement('div');
   card.classList.add('card')
 
-  // headline div
+  // headline div appended to the card
   const headline = document.createElement('div');
   headline.classList.add('headline');
-  headline.textContent.add = 'Change me please';// TODO Add the textcontent for this div
+  headline.textContent.add = articleData.headline;// TODO Add the textcontent for this div
   card.appendChild(headline);
 
   // Author div that is appended to the card
@@ -71,12 +71,12 @@ function Articles(articleData){
 
   // Img src appended to img container
   const imgSrc = document.createElement('img');
-  imgSrc.src = 'Fill this out still please' // TODO Add the img source from the article
+  imgSrc.src = articleData.authorPhoto; // TODO Add the img source from the article
   imgContainer.appendChild(imgSrc);
 
   // Span appended to the author container
   const authorSpan = document.createElement('span');
-  authorSpan.textContent = 'Fill me in please' // TODO Add the text content for the author
+  authorSpan.textContent = articleData.authorName; // TODO Add the text content for the author
   author.appendChild(authorSpan);
 
   return card;
