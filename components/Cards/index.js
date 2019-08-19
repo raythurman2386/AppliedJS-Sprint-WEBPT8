@@ -37,11 +37,6 @@ axios
       const technology = res.data.articles.technology;
       const jquery = res.data.articles.jquery;
       const node = res.data.articles.node;
-      console.log(javascript);  
-      console.log(bootstrap); 
-      console.log(technology); 
-      console.log(jquery); 
-      console.log(node);   
     })
 		.catch((error) => {
       // console log any errors
@@ -56,7 +51,7 @@ function Articles(articleData){
   // headline div appended to the card
   const headline = document.createElement('div');
   headline.classList.add('headline');
-  headline.textContent.add = articleData.headline;// TODO Add the textcontent for this div
+  headline.textContent = articleData.headline;// TODO Add the textcontent for this div
   card.appendChild(headline);
 
   // Author div that is appended to the card
